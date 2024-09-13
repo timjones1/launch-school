@@ -1,13 +1,14 @@
 def prompt(message):
-
+    ''' add ==> to prints to the console'''
     print(f"==>{message}")
 
 def invalid_number(number_str):
+    ''' check if numeric input is a valid integer'''
     try:
         int(number_str)
     except ValueError:
         return True
-    
+
     return False
 
 
@@ -35,7 +36,7 @@ while operation not in ['1', '2', '3', '4']:
     operation = input()
 
 match operation:
-    
+
     case '1':   # '1' represents addition
         output = int(number1) + int(number2)
     case '2': # '2' represents subtraction
