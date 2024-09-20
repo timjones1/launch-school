@@ -1,6 +1,16 @@
 ''' Bonus github branch of calculator exercise
 '''
 
+configs = {}
+
+with open('config.ini',"r") as file:
+
+    lines = file.readlines()
+
+    for line in lines:
+        key, value = line.strip().split("=")
+        configs[key] = value
+
 def prompt(message):
     ''' add ==> to prints to the console'''
     print(f"==>{message}")
@@ -14,28 +24,27 @@ def invalid_number(number_str):
 
     return False
 
-prompt('Welcome to Calculator!')
+prompt(configs['welcome'])
 
 keep_calculating = True
 
 while keep_calculating:
 
-    prompt("What's the first number?")
+    prompt(configs['first'])
     number1 = input()
 
     while invalid_number(number1):
-        prompt("this isnt a valid number:")
+        prompt(configs['invalid'])
         number1 = input()
 
-    prompt("What's the second number?")
+    prompt(configs['second'])
     number2 = input()
 
     while invalid_number(number2):
-        prompt("this isnt a valid number:")
+        prompt(configs['invalid'])
         number2 = input()
 
-    prompt('''What operation would you like to perform?\n
-        1) Add 2) Subtract 3) Multiply 4) Divide''')
+    prompt(configs['operation'])
     operation = input()
 
     while operation not in ['1', '2', '3', '4']:
@@ -53,8 +62,8 @@ while keep_calculating:
         case '4': # '4' represents division
             output = int(number1) / int(number2)
 
-    print(f"The result is: {output}")
+    print(f"{configs['result']}{output}")
 
-    prompt('press y if you would like to complete another calculation, or any other key to finish:')
+    prompt(configs['continue?'])
 
-    keep_calculating = (input() == "y")
+    keep_calculating = input() == "y"
