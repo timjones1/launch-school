@@ -1,3 +1,6 @@
+''' Bonus github branch of calculator exercise
+'''
+
 def prompt(message):
     ''' add ==> to prints to the console'''
     print(f"==>{message}")
