@@ -1,4 +1,4 @@
-''' Bonus github branch of calculator exercise
+''' Calculator exercise with bonus additions
 '''
 
 configs = {}
