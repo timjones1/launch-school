@@ -1,9 +1,11 @@
 ''' Calculator exercise with bonus additions
 '''
 
+language = "fr" #choose from en, fr
+
 configs = {}
 
-with open('config.ini',"r") as file:
+with open(f'{language}_config.ini',"r") as file:
 
     lines = file.readlines()
 
