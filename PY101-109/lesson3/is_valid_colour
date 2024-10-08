@@ -1,0 +1,11 @@
+def is_color_valid(color):
+    return color == "blue" or color == "green"
+
+print(is_color_valid("blue"))
+
+# another option is to use in and a list of the valid colours ["blue", "green"]
+
+def is_color_in_valid__list(color):
+    return color in ["blue", "green"]
+
+print(is_color_in_valid__list("blue"))
