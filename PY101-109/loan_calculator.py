@@ -19,7 +19,7 @@ def valid_duration(num):
         float(num)
     except ValueError:
         return False
-    
+
     return float(num) > 0
 
 def prompt(str_input):
@@ -47,8 +47,20 @@ while True:
     monthly_interest_rate = float(apr_interest_rate) / 12 / 100
 
     loan_duration_months = input("Please enter the duration of the loan in " \
-                                 "months, as a positive number: \n")
+                                 "months, or press y to enter in years: \n")
 
+    # validate alternative duration in years and convert to months
+    if loan_duration_months.lower() == "y":
+        loan_duration_years = input("Please enter the duration of the loan " \
+                                 "in years: \n")
+        while not valid_duration(loan_duration_years):
+            prompt("This is not a valid loan duration, please enter a " \
+               "positive number")
+            loan_duration_years = input()
+
+        loan_duration_months = float(loan_duration_years) * 12
+
+    # validate duration if entered in months
     while not valid_duration(loan_duration_months):
         prompt("This is not a valid loan duration, please enter a positive " \
                "number")
