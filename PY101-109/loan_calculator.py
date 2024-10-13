@@ -1,3 +1,5 @@
+import os
+
 def valid_number(num):
     # check input num is a non_negative number (can be zero)
     # that can be cast to float
@@ -5,6 +7,10 @@ def valid_number(num):
         float(num)
     except ValueError:
         return False
+
+    if num in ["nan", "inf"]:
+        return False
+
     return float(num) >= 0
 
 def valid_duration(num):
@@ -60,5 +66,8 @@ while True:
 
     keep_calculating = input("would you like to do another calculation? " \
                              "press n to exit or any other key to continue: ")
+
     if keep_calculating.lower() == "n":
         break
+
+    os.system('clear')
