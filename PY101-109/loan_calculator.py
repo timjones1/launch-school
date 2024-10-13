@@ -19,6 +19,7 @@ def valid_duration(num):
         float(num)
     except ValueError:
         return False
+    
     return float(num) > 0
 
 def prompt(str_input):
@@ -56,14 +57,17 @@ while True:
     loan_amount = float(loan_amount)
     loan_duration_months = float(loan_duration_months)
 
+    # deal with possible zero interest rate value
     if monthly_interest_rate > 0:
         monthly_repayment = loan_amount * (monthly_interest_rate / \
             (1 -(1 + monthly_interest_rate) ** -loan_duration_months))
     else:
         monthly_repayment = loan_amount / float(loan_duration_months)
 
+    # return the calculated monthly repayment
     prompt(f"The monthly repayment amount is: £{'%.2f' % monthly_repayment}")
 
+    # ask if another calculation is required
     keep_calculating = input("would you like to do another calculation? " \
                              "press n to exit or any other key to continue: ")
 
