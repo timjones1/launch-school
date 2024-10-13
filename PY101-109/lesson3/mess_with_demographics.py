@@ -18,7 +18,7 @@ print(f"{munsters = }")
 
 # i predicted that this wouldnt update the underlying data as during line 10 
 # the items are unpacked from the dictionary before being updated, but this is
-# incorrect and the dictionary objects being unpacked are mutable and relate 
-# to the dictionart munsters. When they are updated using slicing notation
+# incorrect and the dictionary objects being unpacked are mutable and are passed
+# by Object reference inside Munsters. When they are updated using slicing notation
 # the original dictionary is also updated.
 

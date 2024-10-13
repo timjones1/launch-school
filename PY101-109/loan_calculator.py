@@ -13,15 +13,14 @@ def prompt(str_input):
 
 def main():
     # main programme 
-
-    loan_amount = input("please enter the loan amount in pounds and pence "\
+    loan_amount = input("Please enter the loan amount in pounds and pence "\
     "e.g. 1000.00 \n")
 
     while not(valid_positive_number(loan_amount)):
         prompt("That is not a valid positive number, please try again:")
         loan_amount = input()
 
-    apr_interest_rate = input("please enter the loan APR interest rate as a "\
+    apr_interest_rate = input("Please enter the loan APR interest rate as a "\
         "positive number \nfor example for 5% enter 5, for 7.5% enter 7.5: \n")
 
     while not(valid_positive_number(apr_interest_rate)):
@@ -31,7 +30,7 @@ def main():
 
     monthly_interest_rate = float(apr_interest_rate) / 12 / 100
 
-    loan_duration_months = input("please enter the duration of the loan in " \
+    loan_duration_months = input("Please enter the duration of the loan in " \
                                  "months, as a positive number \n")
 
     while not valid_positive_number(loan_duration_months):
@@ -42,6 +41,5 @@ def main():
     monthly_repayment = float(loan_amount) * (monthly_interest_rate / (1 -(1 + monthly_interest_rate) **- float(loan_duration_months)))
 
     prompt(f"The monthly repayment amount is: £{'%.2f' % monthly_repayment}")
-
 
 main()
