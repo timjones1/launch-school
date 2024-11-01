@@ -9,11 +9,13 @@ def crunch(input_string):
 
     return return_string
 
-print(crunch("ddaaiilly") == "daily")
-# These examples should all print True
-print(crunch('ddaaiillyy ddoouubbllee') == 'daily double')
-print(crunch('4444abcabccba') == '4abcabcba')
-print(crunch('ggggggggggggggg') == 'g')
-print(crunch('abc') == 'abc')
-print(crunch('a') == 'a')
-print(crunch('') == '')
+# print(crunch("ddaaiilly") == "daily")
+# # These examples should all print True
+# print(crunch('ddaaiillyy ddoouubbllee') == 'daily double')
+# print(crunch('4444abcabccba') == '4abcabcba')
+# print(crunch('ggggggggggggggg') == 'g')
+# print(crunch('abc') == 'abc')
+# print(crunch('a') == 'a')
+# print(crunch('') == '')
+
+print("!" + "     text with spaces          ".strip() + "!")
